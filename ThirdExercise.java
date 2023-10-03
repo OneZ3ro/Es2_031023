@@ -24,6 +24,7 @@ public class ThirdExercise {
                     int cont = 0;
                     boolean bol1 = false;
                     boolean bol2 = false;
+                    boolean bol3 = false;
                     if (parts[i].equals(":")){
                         bol1 = true;
                         cont = i;
@@ -33,7 +34,11 @@ public class ThirdExercise {
                         bol2 = true;
                     }
 
-                    if (bol1 && bol2) {
+                    if ((cont + 2) == parts.length){
+                        bol3 = true;
+                    }
+
+                    if (bol1 && bol2 && bol3) {
                         System.out.println("You are exiting... ");
                         break myloop;
                     }
