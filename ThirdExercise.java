@@ -7,17 +7,20 @@ public class ThirdExercise {
         Scanner input = new Scanner(System.in);
         System.out.println("---------- Exercise 1 ----------");
         System.out.println("--> Program is running until you type :q ");
-
+        myloop:
         while (true) {
             System.out.println("· Type: ");
             uStr = input.nextLine();
-            if (uStr.equals(":q")) {
-                System.out.println("You are exiting... ");
-                break;
+            String[] parts = uStr.split(", ");
+            for (int i = 0; i < parts.length; i++) {
+                System.out.println("You typed: " + parts[i]);
+                if (parts[i].equals(":q")) {
+                    System.out.println("You are exiting... ");
+                    break myloop;
+                }
             }
-            else {
-                System.out.println("You typed: " + uStr);}
         }
+
         System.out.println("Program completed successfully");
 
         input.close();
