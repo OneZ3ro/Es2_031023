@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class ThirdExercise {
     public static void main(String[] args) {
+        myLoop();
+    }
+
+    public static void myLoop () {
         String uStr = "";
         Scanner input = new Scanner(System.in);
         System.out.println("---------- Exercise 1 ----------");
@@ -11,12 +15,31 @@ public class ThirdExercise {
         while (true) {
             System.out.println("· Type: ");
             uStr = input.nextLine();
-            String[] parts = uStr.split(", ");
-            for (int i = 0; i < parts.length; i++) {
-                System.out.println("You typed: " + parts[i]);
-                if (parts[i].equals(":q")) {
-                    System.out.println("You are exiting... ");
-                    break myloop;
+            if(uStr.length() < 2) {
+                System.out.println("You typed: " + uStr);
+            } else {
+                String[] parts = uStr.split("");
+                String joinString1=String.join(",", parts);
+                for (int i = 0; i < parts.length; i++) {
+                    int cont = 0;
+                    boolean bol1 = false;
+                    boolean bol2 = false;
+                    if (parts[i].equals(":")){
+                        bol1 = true;
+                        cont = i;
+                    }
+
+                    if (parts[cont + 1].equals("q")){
+                        bol2 = true;
+                    }
+
+                    if (bol1 && bol2) {
+                        System.out.println("You are exiting... ");
+                        break myloop;
+                    }
+                    if (i == parts.length - 1){
+                        System.out.println("You typed: " + joinString1);
+                    }
                 }
             }
         }

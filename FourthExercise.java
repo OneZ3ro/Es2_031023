@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class FourthExercise {
     public static void main(String[] args) {
+        myLoop();
+    }
+
+    public static void myLoop () {
         Scanner input = new Scanner(System.in);
         System.out.println("---------- Exercise 1 ----------");
         System.out.println("--> Program countdown");
